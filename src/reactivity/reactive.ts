@@ -5,6 +5,7 @@ export function reactive (raw) {
       // foo
       const res = Reflect.get(target, key)
       // TODO 依赖收集
+      track(target, key)
       return res
     },
     set(target, key, value) {
